@@ -4,7 +4,7 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 
@@ -46,56 +46,83 @@ body{
     filter: invert(100%);
 }
 
-/* Laptops (min-width: 992px to 1366px) */
-@media (min-width: 992px) and (max-width: 1366px) {
+/* Small devices (Phones, 576px and down) */
+@media (max-width: 576px) {
     .custom-nav .nav-link {
-        padding: 4px 10px; /* Further reduce padding for laptops */
+        padding: 3px 5px; /* Adjust padding for small devices */
+        font-size: 8px; /* Adjust font size for small devices */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .custom-nav .nav-link {
+        padding: 3px 6px; /* Adjust padding for small devices */
+        font-size: 10px; /* Adjust font size for small devices */
     }
 }
 
 /* Medium devices (Tablets, 768px and down) */
 @media (max-width: 768px) {
     .custom-nav .nav-link {
-        padding: 3px 8px; /* Adjust padding for tablets */
+        padding: 3px 7px; /* Adjust padding for tablets */
+        font-size: 12px; /* Adjust font size for tablets */
     }
 }
 
-/* Small devices (Phones, 576px and down) */
-@media (max-width: 576px) {
+/* Laptops (min-width: 992px) */
+@media (min-width: 992px) {
     .custom-nav .nav-link {
-        padding: 3px 6px; /* Adjust padding for small devices */
+        padding: 4px 10px; /* Further reduce padding for laptops */
+        font-size: 16px; /* Adjust font size for laptops */
     }
 }
+
+
 
 /* Hero Section Styling */
 .hero-section {
+    position: relative; /* Set position to relative for stacking context */
     background-image: url('images/bg\ pic.jpg'); 
     height: 100vh;
     background-size: cover;
     background-position: center;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+.overlay {
+    position: absolute; /* Position the overlay absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background-color: rgba(0.5, 0.5, 0.5, 0.5); /* Dark overlay (black) with 50% opacity */
+    z-index: 1; /* Ensure the overlay is above the background image */
 }
 
+.container {
+    position: relative; /* Ensure the container is positioned relatively */
+    z-index: 2; /* Higher z-index to place above the overlay */
+}
 .hero-title {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     color: aliceblue; 
 }
-.hero-title span{
-    color: aliceblue;
-    font-weight: bold;
-}
+
 .hero-subtitle {
     color: #ffdd00; 
     margin-top: 10px;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: semi-bold;
 }
 .hero-btn {
-    border-radius: 30px;
+    border-radius: 25px;
     background-color: #ffdd00; 
     color: #141414;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
 }
 
 .hero-btn:hover {
@@ -106,32 +133,31 @@ body{
 /* Responsive Styles for Projects Section */
 @media (max-width: 576px) {
     .hero-title{
-        font-size: 70px;
+        font-size: 35px;
     }
     .hero-subtitle{
-        font-size: 30px;
+        font-size: 20px;
     }
     .hero-btn {
         height: 30px;
-        font-size: 12px; 
+        font-size: 11px; 
+        padding: 0.5rem 1rem; 
     }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
     .hero-title {
-       font-size: 70px;
+       font-size: 45px;
     }
     .hero-subtitle{
-        font-size: 40px;
+        font-size: 30px;
     }
     .hero-btn {
         height: 40px;
         font-size: 15px;
-        padding: 0.5rem 1rem; 
+        padding: 0.5rem 1.5rem; 
     }
 }
-
-
 @media (min-width: 768px) and (max-width: 992px) {
     .hero-title{
         font-size: 50px;
@@ -140,31 +166,23 @@ body{
         font-size: 30px;
     }
     .hero-btn {
-        height: 40px;
-        font-size: 15px; /* Smaller button text size on mobile */
+        height: 45px;
+        font-size: 16px; /* Smaller button text size on mobile */
+        padding: 0.5rem 2rem;
     }
 }
 
 @media (min-width: 992px) {
-    .project-card {
-        margin-bottom: 20px; /* Add space between cards */
-        height: 350px;
+    .hero-title{
+        font-size: 60px;
     }
-    .project-img {
-        max-height: 200px; 
-        object-fit: cover;
+    .hero-subtitle{
+        font-size: 40px;
     }
-
-    .card-title {
-        font-size: 1.1rem; 
-    }
-
-    .card-text {
-        font-size: 1rem; 
-    }
-
-    .project-btn {
-        font-size: 1rem; 
+    .hero-btn {
+        height: 40px;
+        font-size: 20px; /* Smaller button text size on mobile */
+        padding: .5rem 3rem;
     }
 }
 
@@ -208,15 +226,15 @@ body{
 /* For extra small devices (phones, max-width: 576px) */
 @media (max-width: 576px) {
     .about-section {
-        padding: 1rem; 
+        padding: 1.5rem; 
     }
 
     .video-container {
         height: 180px; 
     }
-
+    
     .about-text {
-        font-size: 0.775rem; 
+        font-size: .8rem; 
     }
 }
 
@@ -269,7 +287,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #393939;
+    background-color: #242424;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     margin-bottom: 20%;
@@ -288,6 +306,7 @@ body{
 
 /* Small devices (phones, max-width 576px) */
 @media (max-width: 576px) {
+    
     .skill-card {
         height: 80px;
     }
@@ -335,7 +354,6 @@ body{
     margin-bottom: 5%; /* Custom margin */
     padding: 20px;
 }
-
 .projects-section {
     height: auto; /* Allow the section to grow with content */
 }
@@ -391,7 +409,7 @@ body{
     }
 
     .project-btn {
-        font-size: 0.3rem; 
+        font-size: 0.5rem; 
         margin-top: .5%;
     }
 }
@@ -470,7 +488,7 @@ body{
 
 /* Experience Section Styles */
 .experience-section {
-    background-color: #393939; 
+    background-color: #141414; 
     color: white; 
     padding: 2rem 0; 
 }
@@ -480,7 +498,7 @@ body{
 }
 /* Experience Cards */
 .experience-card {
-    background-color: #141414; 
+    background-color: #242424; 
     border-radius: 15px; 
     border: none; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
@@ -550,64 +568,226 @@ body{
     }
     
 }
+/* General Carousel Styles */
+.carousel {
+    width: 100%;
+    max-height: 55vh; /* Maintain max height for large screens */
+}
+
+/* Responsive Image Styles */
+.carousel-inner img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .carousel-inner img {
+        max-height: 38vh; /* Smaller max height for small screens */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%; /* Wider area for small screens */
+    }
+}
+
+/* Medium devices (min-width: 576px and max-width: 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .carousel-inner img {
+        max-height: 43vh; /* Moderate max height for medium screens */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%; /* Normal clickable area for medium screens */
+    }
+}
+
+/* Large devices (min-width: 768px and max-width: 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .carousel-inner img {
+        max-height: 48vh; /* Keep max height for larger screens */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%; /* Normal clickable area */
+    }
+}
+
+/* Extra large devices (min-width: 992px) */
+@media (min-width: 992px) {
+    .carousel-inner img {
+        max-height: 55vh; /* Keep max height for larger screens */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%; /* Normal clickable area */
+    }
+}
+
 
 /* Contact Section */
 #contact {
-    background-color: #393939; 
-    height: 10%; 
-    padding: 50px 0;
-}
-.contact-section {
-    height: 10%;
+    background-color: #242424; 
+    padding: 40px 0; /* Increased padding for spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
 }
 
 /* Contact Heading */
 #contact h2 {
     color: white; 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
     font-weight: bold;
+    font-size: 2rem; /* Responsive heading size */
 }
 
 /* Contact List Styles */
 #contact ul {
     list-style-type: none; 
     padding: 0; 
+    margin-bottom: 20px; 
 }
 
-/* Contact List Items */
 #contact li {
-    color: whitesmoke; 
-    margin-bottom: 10px; 
+    margin-bottom: 8px; 
 }
 
-/* Responsive Styles for Contact Section */
+/* Form Styles */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px; /* Adjusted max width for better responsiveness */
+    width: 100%;
+    text-align: left;
+}
+
+#contact-form label {
+    font-size: 0.9rem; /* Slightly smaller label size */
+    color: whitesmoke;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form button {
+    padding: 10px; /* Consistent padding */
+    font-size: 1rem; /* Consistent font size */
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%; /* Full-width within the form */
+}
+
+/* Specific Styles */
+#contact-form input[type="text"],
+#contact-form input[type="email"] {
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+#contact-form button {
+    border: none;
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: darkorange;
+}
+
+
+/* Responsive Styles */
+
+/* Small screens (max-width: 576px) */
 @media (max-width: 576px) {
-    #contact {
-        padding: 30px 15px; 
+    #contact h2 {
+        font-size: 1.3rem; /* Smaller heading */
     }
 
-    #contact h2 {
-        font-size: 1.5rem;
+    #contact-form {
+        max-width: 200px; /* Narrower form width */
+    }
+
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form button {
+        font-size: 0.7rem; /* Smaller text size */
+        padding: 6px;
     }
 }
 
-@media (min-width: 768px) {
-    #contact {
-        padding: 50px 30px; 
+/* Medium screens (min-width: 576px and max-width: 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    #contact h2 {
+        font-size: 1.6rem;
     }
 
-    #contact h2 {
-        font-size: 2rem; 
+    #contact-form {
+        max-width: 220px;
+    }
+
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form button {
+        font-size: 0.8rem;
+        padding: 8px;
     }
 }
 
+/* Large screens (min-width: 768px and max-width: 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    #contact {
+        padding: 50px 30px;
+    }
+
+    #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    #contact-form {
+        max-width: 250px;
+    }
+
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form button {
+        font-size: .9rem;
+        padding: 10px;
+    }
+}
+
+/* Extra-large screens (min-width: 992px) */
 @media (min-width: 992px) {
     #contact {
-        padding: 60px 50px; 
+        padding: 60px 40px;
     }
 
     #contact h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    #contact-form {
+        max-width: 280px; /* Final form width */
+    }
+
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form button {
+        font-size: 1rem;
+        padding: 10px;
     }
 }
 
@@ -620,6 +800,9 @@ body{
 #contact a:hover {
     color: gold; 
 }
+
+
+
 
 /* Footer Styles */
 footer {
@@ -637,18 +820,18 @@ footer p {
 /* Responsive Styles for Footer */
 @media (max-width: 576px) {
     footer p {
-        font-size: 0.8rem; 
+        font-size: 0.6rem; 
     }
 }
 
 @media (min-width: 768px) {
     footer p {
-        font-size: 1rem; 
+        font-size: .8rem; 
     }
 }
 
 @media (min-width: 992px) {
     footer p {
-        font-size: 1.2rem; 
+        font-size: 1rem; 
     }
 }

@@ -32,9 +32,9 @@
     </div>
 </nav>
 
-
   <!-- Hero Section --> 
   <section id="hero" class="hero-section d-flex align-items-center">
+    <div class="overlay"></div>
     <div class="container my-5">
         <div class="row">
             <!-- Empty Column for spacing on the left -->
@@ -42,7 +42,7 @@
             
             <!-- Text Column on the right -->
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-start text-white">
-                <h1 class="hero-title">Hi! I'm <span>Christian Rey</span></h1>
+                <h1 class="hero-title">Hi! I'm <br>Christian Rey</h1>
                 <h3 class="hero-subtitle">Software Developer and UI/UX Designer</h3>
                 <a href="#contact" class="btn btn-warning btn-lg mt-5 hero-btn">Message Me!</a>
             </div>
@@ -142,8 +142,8 @@
                     <img src="images/young builder.jpg" class="card-img-top project-img" alt="Project 2">
                     <div class="card-body">
                         <h5 class="card-title">Project 2</h5>
-                        <p class="card-text">Merge Code on GitHub</p>
-                        <a href="https://github.com/XTian-Rey/portfolio" class="btn btn-warning btn-md project-btn" target="_blank">learn more</a>
+                        <p class="card-text">YB Merge Code on GitHub</p>
+                        <a href="https://github.com/Chanlazy/GROUP-2-ITE-18/tree/Sumalinog" class="btn btn-warning btn-md project-btn" target="_blank">learn more</a>
                     </div>
                 </div>
             </div>
@@ -215,10 +215,10 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/cer1.jpg" class="d-block w-100" alt="Certificate 1" style="max-height: 55vh; object-fit: contain; border: 7px solid #050303; border-radius: 10px;">
+                    <img src="images/cer1.jpg">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/cer2.jpg" class="d-block w-100" alt="Certificate 2" style="max-height: 55vh; object-fit: contain; border: 7px solid #050303; border-radius: 10px">
+                    <img src="images/cer2.jpg" >
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
@@ -234,31 +234,25 @@
 </section>
 
 
-<!-- Contact Section -->
-<section id="contact" class="d-flex align-items-center" style="background-color: #393939; height: auto;">
-    <div class="container mt-5">
-        <div class="row align-items-center">
-            <!-- Contact Heading (Left) -->
-            <div class="col-md-6 text-center text-md-end">
-                <h2 class="text-white">Contact</h2>
-            </div>
-            <!-- Contact Details (Right) -->
-            <div class="col-md-6 text-center text-md-start">
-                <ul class="list-unstyled">
-                    <li style="color: whitesmoke;">Email: 
-                        <a href="mailto:sumalinogchristianrey316@gmail.com" class="text-warning">sumalinogchristianrey316@gmail.com</a>
-                    </li>
-                    <li style="color: whitesmoke;">LinkedIn: 
-                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-warning">Your LinkedIn Profile</a>
-                    </li>
-                    <li style="color: whitesmoke;">GitHub: 
-                        <a href="https://github.com/XTian-Rey/portfolio" target="_blank" class="text-warning">https://github.com/XTian-Rey/portfolio</a>
-                    </li>
-                </ul>
-            </div>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <ul>
+        <li>Email: example@example.com</li>
+        <li>Phone: +1 (234) 567-890</li>
+    </ul>
+    <form id="contact-form" action="your_form_processing_url" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
         </div>
-    </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </section>
+
 
 <!-- Footer -->
 <footer class="text-white text-center">
